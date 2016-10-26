@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/IoCSpringExample.iml" filepath="$PROJECT_DIR$/IoCSpringExample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IoCSpringXMLExample.iml" filepath="$PROJECT_DIR$/IoCSpringXMLExample.iml" />
     </modules>
   </component>
 </project>

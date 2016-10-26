@@ -19,7 +19,7 @@
         <constructor-arg ref="fortune"/>
     </bean>
 
-    <!-- Scope prototype -->
+    <!-- Scope prototype (with this scope the destroy method don't work) -->
     <bean id="myCricketCoach" class="leydis.spring.ioc.CricketCoach" scope="prototype">
         <property name="fortuneService" ref="fortune"/>
         <!-- Giving the value directly -->

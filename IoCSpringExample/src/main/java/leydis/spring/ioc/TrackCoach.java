@@ -30,4 +30,17 @@ public class TrackCoach implements Coach {
     public String getTeam() {
         return null;
     }
+
+    //method used in the init-method of the TrackCoach bean in the beanLifeCycle-applicationContext
+    //must be "public void" method and without args
+    public void whenBeanCreation() {
+        System.out.println("Init TrackCoach bean method");
+    }
+
+    //method used in the destroy-method of the TrackCoach bean in the beanLifeCycle-applicationContext
+    //must be "public void" method and without args
+    //this method will not be call for a bean prototype scope
+    public void beforeBeanDestroy() {
+        System.out.println("Destroy TrackCoach bean method");
+    }
 }
