@@ -13,11 +13,14 @@
     <bean id="fortune" class="leydis.spring.ioc.RandomFortuneService">
 
     </bean>
+
+    <!-- Scope singleton by default -->
     <bean id="myCoach" class="leydis.spring.ioc.TrackCoach">
         <constructor-arg ref="fortune"/>
-
     </bean>
-    <bean id="myCricketCoach" class="leydis.spring.ioc.CricketCoach">
+
+    <!-- Scope prototype -->
+    <bean id="myCricketCoach" class="leydis.spring.ioc.CricketCoach" scope="prototype">
         <property name="fortuneService" ref="fortune"/>
         <!-- Giving the value directly -->
         <property name="email" value="lgarzon@hotmail.com"/>

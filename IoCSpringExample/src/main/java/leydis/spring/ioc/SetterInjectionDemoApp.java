@@ -11,13 +11,21 @@ public class SetterInjectionDemoApp {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
         // retrieve the bean from the spring container
-        Coach theCoach = context.getBean("myCricketCoach",Coach.class);
+        Coach theCricketCoach = context.getBean("myCricketCoach",Coach.class);
+        Coach otherCricketCoach = context.getBean("myCricketCoach",Coach.class);
+
+        Coach theTrackCoach = context.getBean("myCoach",Coach.class);
+        Coach otherTrackCoach = context.getBean("myCoach",Coach.class);
 
         // call methods on the bean
-        System.out.println(theCoach.getDailyWorkout());
-        System.out.println(theCoach.getDailyFortune());
-        System.out.println(theCoach.getEmail());
-        System.out.println(theCoach.getTeam());
+        System.out.println(theCricketCoach.getDailyWorkout());
+        System.out.println(theCricketCoach.getDailyFortune());
+        System.out.println(theCricketCoach.getEmail());
+        System.out.println(theCricketCoach.getTeam());
+
+                //testing scope
+        System.out.println("Retrieve the same object CricketCoach? " + (theCricketCoach == otherCricketCoach) + " " + theCricketCoach + " != " + otherCricketCoach);
+        System.out.println("Retrieve the same object TrackCoach? " + (theTrackCoach == otherTrackCoach) + " " + theTrackCoach + " = " + otherTrackCoach);
 
         // close the context
         context.close();
