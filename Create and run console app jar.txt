@@ -1,0 +1,76 @@
+
+-> Steps for jar creation
+
+ *** Create jar with IntelliJ:
+  -Steps:
+ 1. Configuring the artifact
+	> Open File/Project Structure
+	 > In the Artifacts menu click in the "+" for add and artefact
+	  > Select Jar/From module with dependencies
+	   > In the emerge window selecting in the Main Class, the class with the main method. Then click ok.
+	    > In the follow window only click ok 
+ 2. Build the artefact
+	> Open Build/Build Artifacts
+	 > In the emerge select Build action in the artifact created previosly
+ 
+ 3. The jar is created in the out\artifacts\${ProjectName}_jar folder within the project folder and the MANIFEST.MF in src/main/java/META-INF
+
+ 
+ *** Create jar of an console app in IntelliJ with maven:
+ -Steps:
+ 1. Include the maven plugin for jar creation:
+    <build>
+        <plugins>
+            <plugin>
+                <!-- Build an executable JAR -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.0.2</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>leydis.spring.ioc.MyApp</mainClass> <!--This is the class of the main method-->
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+			
+			<!-- If has external dependencies(spring...) -->
+			<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/lib</outputDirectory> <!-- The folder target/lib will contain the dependencies jar-->
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+2. Build the maven project
+  > Open the window "Maven Projects" (to active this window View/Tool Windows/Maven Projects). 
+   > Then go to the current project and in lifecycle click the "install" option.
+   
+3. The jar is created within the project folder in the target folder .
+
+  
+  
+-> Steps for runing (as admin, cd directly in the directory of the jar)
+ 
+ *** Option 1
+	java -jar fileName.jar
+ 
+ 
+ *** Option 2
+	if option 1 give a manifest error used the following option:
+		java -cp jarFileName.jar full.package.className 
+	With this option you wouldn't have to go into specifics of the Manifest file.
