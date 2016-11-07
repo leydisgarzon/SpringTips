@@ -11,4 +11,4 @@ Projects:
   
 * IoCSpringAnnotationMavenJar
   - Dependencies: org.springframework > spring-context > 4.3.3.RELEASE
-  - Tips: The same project as the above project (IoCSpringAnnotation) including maven configuration for the creation of the jar. "<maven-jar-plugin>" and "<maven-dependency-plugin>"
+  - Tips: The same project as the above project (IoCSpringAnnotation) including maven configuration for the creation of the jar. Pom elements "maven-jar-plugin" and "maven-dependency-plugin".
