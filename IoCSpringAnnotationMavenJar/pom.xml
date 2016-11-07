@@ -38,6 +38,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
+                            <classpathPrefix>lib/</classpathPrefix>
                             <mainClass>leydis.spring.ioc.MyApp</mainClass>
                         </manifest>
                     </archive>
