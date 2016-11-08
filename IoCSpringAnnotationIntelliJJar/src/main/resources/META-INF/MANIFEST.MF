@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Class-Path: spring-context-4.3.3.RELEASE.jar spring-aop-4.3.3. RELEASE
+ .jar spring-beans-4.3.3.RELEASE.jar spring-core-4.3.3. RELEASE.jar co
+ mmons-logging-1.2.jar spring-expression-4.3.3.R ELEASE.jar
+Main-Class: leydis.spring.ioc.MyApp
+
