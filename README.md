@@ -16,4 +16,4 @@ Projects:
 * SpringMVC-FisrtApp 
   - Dependencies: org.springframework > spring-context > 4.3.3.RELEASE
                   javax.servlet > servlet-api > 3.0-alpha-1
-  - Tips: Xml definition of the DispatcherServlet (front controller) in the web.xml: name, mapping and xml file config of the dispatcher. XML configuration of the distpacher in the spring-servlet.xml: define component-scan package, annotation-driven, views resolver, etc. Get the params from the request in the returned view using ${param.get("userName")} or ${param.userName} when userName is the name of the element in the form. Use of @Controller, @RequestMapping, @RequestParam.  
+  - Tips: Xml definition of the DispatcherServlet (front controller) in the web.xml: name, mapping and xml file config of the dispatcher. XML configuration of the distpacher in the spring-servlet.xml: define component-scan package, annotation-driven, views resolver, etc. Get the params from the request in the returned view using ${param.get("userName")} or ${param.userName} where userName is the name of the element in the form. Use of @Controller, @RequestMapping, @RequestParam.  
