@@ -5,10 +5,12 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context
-    http://www.springframework.org/schema/context/spring-context.xsd">
+    http://www.springframework.org/schema/context/spring-context.xsd"> <!--inside beans can be defined: default-lazy-init="true".
+    For avoid the pre-instantiated of all the beans -->
 
     <!-- Define/load the properties file -->
-    <context:property-placeholder location="sportCoach.properties"/>
+    <context:property-placeholder location="sportCoach.properties"/> <!--inside bean can be defined: lazy-init="true".
+    For avoid the pre-instantiated of this bean when the context start up -->
     <!-- Define your beans here -->
     <bean id="fortune" class="leydis.spring.ioc.RandomFortuneService">
 
@@ -19,12 +21,13 @@
         <constructor-arg ref="fortune"/>
     </bean>
 
-    <!-- Scope prototype (with this scope the destroy method don't work) -->
+    <!-- Scope prototype (with this scope the destroy method doesn't work) -->
+    <!-- each property represents a field injection -->
     <bean id="myCricketCoach" class="leydis.spring.ioc.CricketCoach" scope="prototype">
         <property name="fortuneService" ref="fortune"/>
         <!-- Giving the value directly -->
         <property name="email" value="lgarzon@hotmail.com"/>
-        <!-- Obtaining the value from a properties file -->
+        <!-- Obtaining the value from a properties file sportCoach.properties -->
         <property name="team" value="${cricket.team}"/>
     </bean>
 </beans>
