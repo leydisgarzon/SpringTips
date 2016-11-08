@@ -7,13 +7,13 @@
 	> Open File/Project Structure
 	 > In the Artifacts menu click in the "+" for add and artefact
 	  > Select Jar/From module with dependencies
-	   > In the emerge window selecting in the Main Class, the class with the main method. In the Directory for META-INF/MANIFEST.MF change java for resource otherwise the manifest in the jar may will be take from the other dependencies META-INF instance of our META-INF. Then click ok.
+	   > In the emerge window selecting in the Main Class, the class with the main method. Then click ok.
 	    > In the follow window only click ok 
  2. Build the artefact
 	> Open Build/Build Artifacts
 	 > In the emerge select Build action in the artifact created previosly
  
- 3. The jar is created in the out\artifacts\${ProjectName}_jar folder within the project folder and the MANIFEST.MF in src/main/resource/META-INF
+ 3. The jar is created in the out\artifacts\${ProjectName}_jar folder within the project folder and the MANIFEST.MF in src/main/java/META-INF
 
  
  *** Create jar of an console app in IntelliJ with maven:
